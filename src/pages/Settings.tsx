@@ -3,10 +3,11 @@ import { Moon, Sun, Lock, Bell, Shield, Globe, Smartphone, Mail, Eye, EyeOff, Do
 import Card from '../components/Common/Card';
 import Button from '../components/Common/Button';
 import { useAuth } from '../contexts/AuthContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 export default function Settings() {
   const { user } = useAuth();
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const { theme, setTheme } = useTheme();
   const [notifications, setNotifications] = useState({
     email: true,
     sms: false,

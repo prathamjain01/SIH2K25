@@ -9,6 +9,7 @@ interface User {
   role: UserRole;
   avatar?: string;
   department?: string;
+  branch?: string;
   year?: string;
   rollNumber?: string;
 }
@@ -30,6 +31,7 @@ const sampleUsers: User[] = [
     email: 'alex@student.edu',
     role: 'student',
     department: 'Computer Science',
+    branch: 'CSE',
     year: '3rd Year',
     rollNumber: 'CS2021001'
   },
@@ -38,7 +40,8 @@ const sampleUsers: User[] = [
     name: 'Dr. Sarah Wilson',
     email: 'sarah@staff.edu',
     role: 'staff',
-    department: 'Computer Science'
+    department: 'Computer Science',
+    branch: 'CSE'
   },
   {
     id: '3',

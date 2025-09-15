@@ -32,12 +32,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       admin: [
         { to: '/admissions', icon: Users, label: 'Admissions' },
         { to: '/fees', icon: CreditCard, label: 'Fee Management' },
-        { to: '/hostel', icon: Building, label: 'Hostel Management' },
         { to: '/library', icon: BookOpen, label: 'Library Records' },
         { to: '/examinations', icon: FileText, label: 'Examinations' }
       ],
       staff: [
         { to: '/admissions', icon: Users, label: 'Admissions' },
+        { to: '/hostel', icon: Building, label: 'Hostel Management' },
         { to: '/library', icon: BookOpen, label: 'Library Records' },
         { to: '/examinations', icon: FileText, label: 'Examinations' }
       ],
@@ -68,14 +68,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       
       {/* Sidebar */}
       <div className={`
-        fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 z-50 h-full w-64 bg-white dark:bg-dark-800 shadow-lg transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:relative lg:translate-x-0 lg:z-0
       `}>
-        <div className="flex items-center justify-center h-16 border-b border-gray-200">
+        <div className="flex items-center justify-center h-16 border-b border-gray-200 dark:border-dark-700">
           <div className="flex items-center space-x-2">
             <GraduationCap className="w-8 h-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-800">ERP Portal</span>
+            <span className="text-xl font-bold text-gray-800 dark:text-gray-100">ERP Portal</span>
           </div>
         </div>
         
@@ -85,10 +85,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               key={item.to}
               to={item.to}
               className={({ isActive }) => `
-                flex items-center px-4 py-3 text-gray-700 rounded-lg mb-1 transition-colors duration-200
+                flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 rounded-lg mb-1 transition-colors duration-200
                 ${isActive 
-                  ? 'bg-blue-50 text-blue-600 border-r-2 border-blue-600' 
-                  : 'hover:bg-gray-50 hover:text-blue-600'
+                  ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 border-r-2 border-blue-600' 
+                  : 'hover:bg-gray-50 dark:hover:bg-dark-700 hover:text-blue-600'
                 }
               `}
               onClick={() => onClose()}

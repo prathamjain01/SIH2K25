@@ -23,7 +23,20 @@ export default function Login() {
     try {
       const success = await login(email, password, role);
       if (success) {
-        navigate('/dashboard');
+        // Role-based redirection
+        switch (role) {
+          case 'admin':
+            navigate('/dashboard');
+            break;
+          case 'staff':
+            navigate('/dashboard');
+            break;
+          case 'student':
+            navigate('/dashboard');
+            break;
+          default:
+            navigate('/dashboard');
+        }
       } else {
         setError('Invalid credentials. Try: password');
       }
